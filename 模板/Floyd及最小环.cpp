@@ -7,6 +7,7 @@ ll e[505][505],dis[505][505],ans[505];
 int sr[505];
 void Floyd(ll n){
 	ll tmp=INF;
+	//sr是加点顺序，通常情况下取sr[i]=i ，有特殊要求另行讨论 
 	for(int k=1;k<=n;k++){
 		for(int i=1;i<k;i++){
 			for(int j=i+1;j<k;j++){

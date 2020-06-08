@@ -9,6 +9,7 @@ int vis[200050];
 priority_queue<pair<ll,ll>,vector<pair<ll,ll> >,greater<pair<ll,ll> > >q;
 int n,m;
 void dij(){
+	//这里2*w的意思是一个来回，具体情况需具体分析 
 	ll now=0,v1=0,w=0;
 	q.push({0,0});
 	while(!q.empty()){

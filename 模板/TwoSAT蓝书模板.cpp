@@ -32,10 +32,12 @@ struct TwoSAT
 
     void add_clause(int x,int xval,int y,int yval)
     {
+    	//这里x代表点，xval代表取值，y同理 y^1代表y+1
+		//建边并非一成不变 根据充分条件建边才是核心思想 
         x=x*2+xval;
         y=y*2+yval;
-        G[x].push_back(y);
-        //G[y^1].push_back(x);
+        G[x^1].push_back(y);
+        G[y^1].push_back(x);
     }
 
     bool solve()
@@ -54,35 +56,3 @@ struct TwoSAT
     }
 };
 TwoSAT sat;
-int inv(int a){
-	if(a)return 0;
-	else return 1;
-}
-void solve(){
-    int n,m,a,b,c,u,v,w;
-    scanf("%d %d",&n,&m);
-    sat.init(n);
-    for(int i=1;i<=m;i++){
-    	scanf("%d %d %d %d %d %d",&a,&u,&b,&v,&c,&w);
-    	sat.add_clause(a,inv(u),b,v);
-    	sat.add_clause(a,inv(u),c,w);
-    	sat.add_clause(b,inv(v),a,u);
-    	sat.add_clause(b,inv(v),c,w);
-    	sat.add_clause(c,inv(w),a,u);
-    	sat.add_clause(c,inv(w),b,v);
-	}
-	if(sat.solve())printf("YES");
-	else printf("NO");
-}
-
-signed main()
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-    int t=1;
-    //scanf("%d",&t);
-    while(t--){
-        solve(); 
-    }
-    
-}

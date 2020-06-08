@@ -94,6 +94,8 @@ ll query(ll x,ll y,ll val){
 
 void solve(){
 	//minn是最小生成树权值 
+	
+	//非严格次小生成树只需要维护最大值而非最大值和次大值  请自行修改 
     ll w,ans=INF,tmp=INF,maxu,maxv;
     ll u,v,lca;
     scanf("%lld %lld",&n,&m);
