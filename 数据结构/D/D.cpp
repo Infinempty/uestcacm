@@ -75,10 +75,12 @@ void solve(){
 	int index,N;
 	scanf("%d",&N);
 	index=N+1;
-	scanf("%s",&a);
+	getchar();
+	gets(a);
+	//cout<<a;
 	build(1,1,2*N+10);
 	for(int i=0;i<N;i++){
-		if(a[i]=='L')index--;
+		if(a[i]=='L')index=min(1,index-1);
 		else if(a[i]=='R')index++;
 		else if(a[i]=='('){
 			if(cord[index]==')'){
@@ -109,14 +111,4 @@ void solve(){
 		}
 	}
 	cout<<"\n";
-}
-int main()
-{
-	cin.tie(0);
-	ios::sync_with_stdio(false);
-	int t=1;
-	//scanf("%d",&t);
-	while(t--){
-		solve();
-	}
 }
