@@ -22,6 +22,7 @@ ll find(ll x){
 	return fa_fi[x];
 }
 void kruskal(){
+	//tree
 	ll u,v;
 	for(int i=1;i<=n;i++)fa_fi[i]=i;
 	sort(e+1,e+m+1,cmp);
@@ -38,6 +39,24 @@ void kruskal(){
 		}
 	}
 }
+
+void kruskal(){
+	//base ring tree
+	ll u,v;
+	for(int i=1;i<=n;i++)fa_fi[i]=i;
+	sort(e+1,e+m+1,cmp);
+	for(int i=1;i<=m;i++){
+		u=find(e[i].u),v=find(e[i].v);
+		if(vis[u]&&vis[v])continue;
+		if(u==v)vis[u]=1;
+		else{
+			fa_fi[u]=v;
+			vis[v]=vis[u]|vis[v];
+		}
+		ans+=e[i].w;
+	}
+}
+
 
 void solve(){
 	//e存原始图 e1存最小生成树 

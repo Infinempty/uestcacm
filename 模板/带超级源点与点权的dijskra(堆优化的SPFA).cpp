@@ -19,8 +19,8 @@ void dij(){
 		}
 		vis[now]=1;
 		for(int i=0;i<v[now].size();i++){
-			v1=v[now][i].first;
-			w=v[now][i].second;
+			v1=v[now][i].second;
+			w=v[now][i].first;
 			if(w==0){
 				q.push({dis[v1],v1});
 				continue;

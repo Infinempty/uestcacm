@@ -3,6 +3,7 @@
 using namespace std; 
 ll mpow(ll a,ll n)
 {
+	if(a==1||n==0)return 1;
 	ll ans=1;
 	a%=MOD;
 	while(n!=0)
