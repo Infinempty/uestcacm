@@ -2,7 +2,7 @@
 
 求解方程：
 
-$x+y=a\\lcm(x,y)=b\\x,y\in Z^+$
+$x+y=a\,lcm(x,y)=b\,x,y\in Z^+$
 
 显而易见的存在一个暴力算法，我们从2遍历到a，算法复杂度$O(aloga)$
 
@@ -14,7 +14,7 @@ $x+y=a\\lcm(x,y)=b\\x,y\in Z^+$
 
 则$x=ki,y=kj$其中$gcd(i,j)=1$
 
-则有$k(i+j)=a\\kij=b$
+则有$k(i+j)=a\,kij=b$
 
 假设$gcd(i+j,ij)=k_1\neq1$
 
@@ -28,7 +28,7 @@ $gcd(x,y)=gcd(a,b)$得证
 
 2.由引理1，我们所求解的方程可以变形为
 
-$x+y=a\\xy=bgcd(a,b)$
+$x+y=a\,xy=bgcd(a,b)$
 
 原问题就变成解二次方程$x^2-ax+bgcd(a,b)=0$
 
@@ -50,7 +50,7 @@ $a\pm\sqrt\Delta \equiv1\ mod\ 2$
 
 这个问题有个衍生问题
 
-$x+y=a\\gcd(x,y)=b$
+$x+y=a\,gcd(x,y)=b$
 
 上式可以变形为
 
